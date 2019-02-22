@@ -10,16 +10,40 @@
   <name>my-first-application</name>
   <url>http://maven.apache.org</url>
 
-	<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-parent -->
-	<parent>
-	    <groupId>org.springframework.boot</groupId>
-	    <artifactId>spring-boot-starter-parent</artifactId>
-	    <version>2.0.3.RELEASE</version>
-	</parent>
+        <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-parent -->
+        <parent>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-parent</artifactId>
+            <version>2.0.3.RELEASE</version>
+        </parent>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
+
+  <build>
+  <plugins>
+    <plugin>
+      <!-- Build an executable JAR -->
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-jar-plugin</artifactId>
+      <version>3.1.0</version>
+      <configuration>
+        <archive>
+          <manifest>
+            <addClasspath>true</addClasspath>
+            <classpathPrefix>lib/</classpathPrefix>
+            <mainClass>springboot.my_first_application.App</mainClass>
+          </manifest>
+        </archive>
+      </configuration>
+     </plugin>
+    <plugin>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-maven-plugin</artifactId>
+    </plugin>
+    </plugins>
+   </build>
 
   <dependencies>
     <dependency>
@@ -27,19 +51,11 @@
       <artifactId>junit</artifactId>
       <scope>test</scope>
     </dependency>
-    
+
     <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web -->
 	<dependency>
 	    <groupId>org.springframework.boot</groupId>
 	    <artifactId>spring-boot-starter-web</artifactId>
 	</dependency>
-	<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-test -->
-<dependency>
-    <groupId>org.springframework.boot</groupId>
-    <artifactId>spring-boot-starter-test</artifactId>
-    <version>2.1.1.RELEASE</version>
-    <scope>test</scope>
-</dependency>
-    
-  </dependencies>
+   </dependencies>
 </project>
