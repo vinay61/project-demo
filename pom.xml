@@ -53,18 +53,9 @@
     </dependency>
 
     <!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web -->
-<<<<<<< HEAD
 	<dependency>
 	    <groupId>org.springframework.boot</groupId>
 	    <artifactId>spring-boot-starter-web</artifactId>
 	</dependency>
-    
-=======
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-
->>>>>>> 7ef18df739d0e9ea09ccf627f515cae49865ba00
-  </dependencies>
+   </dependencies>
 </project>
